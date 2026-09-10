@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView
-    android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F7F5FA">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,69 +12,118 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+        <!-- App Title -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Smart Student Hub"
-            android:textSize="28sp"
+            android:textColor="#222222"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:text="Welcome back, Student!"
-            android:textSize="18sp" />
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <!-- Search Bar -->
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="24dp"
+            android:background="#FFFFFF"
+            android:hint="🔍  Search notes or topics"
+            android:padding="15dp"
+            android:textSize="15sp" />
+
+        <!-- Quick Study -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="Quick Access"
-            android:textSize="22sp"
+            android:text="Quick Study"
+            android:textColor="#222222"
+            android:textSize="21sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnSubjects"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="My Subjects" />
-
-        <Button
-            android:id="@+id/btnAssignments"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Assignments" />
-
-        <Button
-            android:id="@+id/btnTimetable"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Timetable" />
-
-        <Button
-            android:id="@+id/btnAttendance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Attendance" />
+        <!-- Notes -->
 
         <Button
             android:id="@+id/btnNotes"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Notes" />
+            android:layout_height="55dp"
+            android:layout_marginTop="14dp"
+            android:text="📚  Notes"
+            android:textSize="16sp" />
+
+        <!-- Flashcards -->
 
         <Button
-            android:id="@+id/btnTasks"
+            android:id="@+id/btnFlashcards"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:text="🧠  Flashcards"
+            android:textSize="16sp" />
+
+        <!-- Quiz -->
+
+        <Button
+            android:id="@+id/btnQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:text="📝  Quiz"
+            android:textSize="16sp" />
+
+        <!-- AI Doubt -->
+
+        <Button
+            android:id="@+id/btnDoubt"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:text="🤖  Ask a Doubt"
+            android:textSize="16sp" />
+
+        <!-- Recent Activity -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Recent Activity"
+            android:textColor="#222222"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/recentActivityText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="My Tasks" />
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:text="No recent activity"
+            android:textColor="#555555"
+            android:textSize="15sp" />
+
+        <!-- Progress -->
+
+        <Button
+            android:id="@+id/btnProgress"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:text="📊  View My Progress"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
