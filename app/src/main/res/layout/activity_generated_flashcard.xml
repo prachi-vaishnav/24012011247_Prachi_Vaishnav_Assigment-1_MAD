@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F5FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Flashcards"
+            android:textColor="#222222"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/flashcardProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Card 1 of 5"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/flashcardQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="30dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="What is the main concept?"
+            android:textColor="#222222"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnShowAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:text="Show Answer"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/flashcardAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="15dp"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="The answer will appear here."
+            android:textColor="#444444"
+            android:textSize="17sp"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/btnPreviousCard"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:text="Previous Card"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnNextCard"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:text="Next Card"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+</ScrollView>
