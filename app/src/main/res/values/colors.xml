@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+
+    <!-- Smart Student Hub - Professional Dark Theme -->
+
+    <color name="primary">#7C5CFC</color>
+    <color name="primary_dark">#6246D8</color>
+    <color name="primary_light">#A995FF</color>
+
+    <color name="background">#0F1117</color>
+    <color name="surface">#171A23</color>
+    <color name="surface_variant">#202430</color>
+
+    <color name="text_primary">#F5F5F7</color>
+    <color name="text_secondary">#A8ACB8</color>
+
+    <color name="success">#4ADE80</color>
+    <color name="warning">#FBBF24</color>
+    <color name="error">#F87171</color>
+
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
 </resources>

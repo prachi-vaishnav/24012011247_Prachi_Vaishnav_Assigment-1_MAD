@@ -4,7 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F5FA">
+    android:background="@color/background"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,72 +13,109 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- Top Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Flashcards"
-            android:textColor="#222222"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
+            <TextView
+                android:id="@+id/btnBack"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:text="‹"
+                android:textColor="@color/text_primary"
+                android:textSize="36sp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Your Flashcards"
+                android:textColor="@color/text_primary"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Progress -->
         <TextView
             android:id="@+id/flashcardProgressText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="2dp"
             android:text="Card 1 of 5"
-            android:textColor="#666666"
-            android:textSize="15sp" />
+            android:textColor="@color/primary_light"
+            android:textSize="14sp" />
 
+        <!-- Question Card -->
         <TextView
             android:id="@+id/flashcardQuestion"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginTop="30dp"
-            android:background="#FFFFFF"
+            android:layout_height="240dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_focus_card"
             android:gravity="center"
-            android:padding="20dp"
+            android:padding="24dp"
             android:text="What is the main concept?"
-            android:textColor="#222222"
-            android:textSize="20sp"
+            android:textColor="@color/text_primary"
+            android:textSize="21sp"
             android:textStyle="bold" />
 
+        <!-- Show Answer -->
         <Button
             android:id="@+id/btnShowAnswer"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="20dp"
+            android:backgroundTint="@color/primary"
             android:text="Show Answer"
-            android:textSize="16sp" />
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
+        <!-- Answer Card -->
         <TextView
             android:id="@+id/flashcardAnswer"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:layout_marginTop="15dp"
-            android:background="#FFFFFF"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_card"
             android:gravity="center"
-            android:padding="20dp"
+            android:padding="22dp"
             android:text="The answer will appear here."
-            android:textColor="#444444"
+            android:textColor="@color/text_secondary"
             android:textSize="17sp"
             android:visibility="gone" />
+
+        <!-- Previous -->
         <Button
             android:id="@+id/btnPreviousCard"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="52dp"
             android:layout_marginTop="20dp"
-            android:text="Previous Card"
-            android:textSize="16sp" />
+            android:backgroundTint="@color/surface_variant"
+            android:text="‹  Previous Card"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
 
+        <!-- Next -->
         <Button
             android:id="@+id/btnNextCard"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:text="Next Card"
-            android:textSize="16sp" />
-
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/primary"
+            android:text="Next Card  ›"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F5FA"
+    android:background="@color/background"
     android:fillViewport="true">
 
     <LinearLayout
@@ -13,60 +13,100 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Page Title -->
+        <!-- Top Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Back Button -->
+            <TextView
+                android:id="@+id/btnBack"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:text="‹"
+                android:textColor="@color/text_primary"
+                android:textSize="36sp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Flashcards"
+                android:textColor="@color/text_primary"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Subtitle -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Flashcards"
-            android:textColor="#222222"
-            android:textSize="28sp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="2dp"
+            android:text="Turn your notes into smart flashcards"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <!-- Section Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Study Material"
+            android:textColor="@color/text_primary"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Turn your notes into flashcards automatically"
-            android:textColor="#666666"
-            android:textSize="15sp" />
-
-        <!-- Notes Input -->
+        <!-- Notes Input Card -->
         <EditText
             android:id="@+id/flashcardNotesEditText"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginTop="24dp"
-            android:background="#FFFFFF"
+            android:layout_height="230dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_card"
             android:gravity="top"
             android:hint="Paste or type your study notes here..."
+            android:textColorHint="@color/text_secondary"
             android:inputType="textMultiLine"
-            android:padding="15dp"
+            android:padding="18dp"
+            android:textColor="@color/text_primary"
             android:textSize="15sp" />
 
         <!-- Number of Cards -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:text="Number of flashcards"
-            android:textColor="#222222"
+            android:textColor="@color/text_primary"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/flashcardCountSpinner"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="8dp" />
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card" />
 
         <!-- Generate Button -->
         <Button
             android:id="@+id/btnGenerateFlashcards"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginTop="20dp"
-            android:text="🤖  Generate Flashcards"
-            android:textSize="16sp" />
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/primary"
+            android:text="✦  Generate Flashcards"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

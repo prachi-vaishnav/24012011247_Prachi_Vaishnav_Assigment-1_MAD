@@ -70,6 +70,14 @@ class GeneratedQuizActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_generated_quiz)
 
+        // Back Button
+        val backButton = findViewById<TextView>(R.id.btnBack)
+
+        backButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
+        // Find Views
         progressText = findViewById(R.id.quizProgressText)
         questionText = findViewById(R.id.quizQuestion)
         resultText = findViewById(R.id.quizResultText)
@@ -82,8 +90,10 @@ class GeneratedQuizActivity : AppCompatActivity() {
         previousButton = findViewById(R.id.btnPreviousQuestion)
         nextButton = findViewById(R.id.btnNextQuestion)
 
+        // Show first question
         showQuestion()
 
+        // Answer buttons
         optionA.setOnClickListener {
             checkAnswer(0)
         }
@@ -100,36 +110,54 @@ class GeneratedQuizActivity : AppCompatActivity() {
             checkAnswer(3)
         }
 
+        // Previous Question
         previousButton.setOnClickListener {
+
             if (currentQuestion > 0) {
                 currentQuestion--
                 showQuestion()
             }
         }
 
+        // Next Question
         nextButton.setOnClickListener {
+
             if (currentQuestion < questions.size - 1) {
+
                 currentQuestion++
                 showQuestion()
+
             } else {
+
                 showFinalScore()
             }
         }
     }
 
     private fun showQuestion() {
+
         progressText.text =
             "Question ${currentQuestion + 1} of ${questions.size}"
 
-        questionText.text = questions[currentQuestion]
+        questionText.text =
+            questions[currentQuestion]
 
-        optionA.text = "A. ${options[currentQuestion][0]}"
-        optionB.text = "B. ${options[currentQuestion][1]}"
-        optionC.text = "C. ${options[currentQuestion][2]}"
-        optionD.text = "D. ${options[currentQuestion][3]}"
+        optionA.text =
+            "A. ${options[currentQuestion][0]}"
 
+        optionB.text =
+            "B. ${options[currentQuestion][1]}"
+
+        optionC.text =
+            "C. ${options[currentQuestion][2]}"
+
+        optionD.text =
+            "D. ${options[currentQuestion][3]}"
+
+        // Hide previous result
         resultText.visibility = TextView.GONE
 
+        // Enable answer buttons
         optionA.isEnabled = true
         optionB.isEnabled = true
         optionC.isEnabled = true
@@ -137,6 +165,7 @@ class GeneratedQuizActivity : AppCompatActivity() {
 
         answered = false
 
+        // Hide Previous on first question
         if (currentQuestion == 0) {
             previousButton.visibility = TextView.GONE
         } else {
@@ -146,6 +175,7 @@ class GeneratedQuizActivity : AppCompatActivity() {
 
     private fun checkAnswer(selectedAnswer: Int) {
 
+        // Prevent multiple answers
         if (answered) {
             return
         }
@@ -153,15 +183,19 @@ class GeneratedQuizActivity : AppCompatActivity() {
         answered = true
 
         if (selectedAnswer == correctAnswers[currentQuestion]) {
+
             score++
 
             resultText.text = "✅ Correct!"
+
         } else {
+
             resultText.text = "❌ Incorrect!"
         }
 
         resultText.visibility = TextView.VISIBLE
 
+        // Disable options after answering
         optionA.isEnabled = false
         optionB.isEnabled = false
         optionC.isEnabled = false
@@ -169,26 +203,56 @@ class GeneratedQuizActivity : AppCompatActivity() {
     }
 
     private fun showFinalScore() {
+
         val sharedPreferences =
-            getSharedPreferences("SmartStudentHub", MODE_PRIVATE)
+            getSharedPreferences(
+                "SmartStudentHub",
+                MODE_PRIVATE
+            )
 
         val quizzesCompleted =
-            sharedPreferences.getInt("quizzesCompleted", 0)
+            sharedPreferences.getInt(
+                "quizzesCompleted",
+                0
+            )
 
         val questionsAttempted =
-            sharedPreferences.getInt("questionsAttempted", 0)
+            sharedPreferences.getInt(
+                "questionsAttempted",
+                0
+            )
 
-        val correctAnswers =
-            sharedPreferences.getInt("correctAnswers", 0)
+        val previousCorrectAnswers =
+            sharedPreferences.getInt(
+                "correctAnswers",
+                0
+            )
 
+        // Save quiz statistics
         sharedPreferences.edit()
-            .putInt("quizzesCompleted", quizzesCompleted + 1)
-            .putInt("questionsAttempted", questionsAttempted + questions.size)
-            .putInt("correctAnswers", correctAnswers + score)
-            .putInt("lastScore", score)
-            .putInt("lastTotal", questions.size)
+            .putInt(
+                "quizzesCompleted",
+                quizzesCompleted + 1
+            )
+            .putInt(
+                "questionsAttempted",
+                questionsAttempted + questions.size
+            )
+            .putInt(
+                "correctAnswers",
+                previousCorrectAnswers + score
+            )
+            .putInt(
+                "lastScore",
+                score
+            )
+            .putInt(
+                "lastTotal",
+                questions.size
+            )
             .apply()
 
+        // Show final result
         questionText.text = "🎉 Quiz Completed!"
 
         resultText.text =
@@ -196,15 +260,16 @@ class GeneratedQuizActivity : AppCompatActivity() {
 
         resultText.visibility = TextView.VISIBLE
 
+        // Hide options
         optionA.visibility = TextView.GONE
         optionB.visibility = TextView.GONE
         optionC.visibility = TextView.GONE
         optionD.visibility = TextView.GONE
 
+        // Hide navigation
         previousButton.visibility = TextView.GONE
         nextButton.visibility = TextView.GONE
+
         progressText.text = "Quiz Finished"
-
-
     }
 }

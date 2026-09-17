@@ -36,6 +36,13 @@ class GeneratedFlashcardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_generated_flashcard)
 
+        // Back Button
+        val backButton = findViewById<TextView>(R.id.btnBack)
+
+        backButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
         progressText = findViewById(R.id.flashcardProgressText)
         questionText = findViewById(R.id.flashcardQuestion)
         answerText = findViewById(R.id.flashcardAnswer)
