@@ -6,63 +6,124 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ProgressActivity : AppCompatActivity() {
 
+    private lateinit var focusSessionsText: TextView
+    private lateinit var studyTimeText: TextView
+    private lateinit var quizzesCompletedText: TextView
+    private lateinit var questionsAttemptedText: TextView
+    private lateinit var correctAnswersText: TextView
+    private lateinit var lastScoreText: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_progress)
 
-        val quizzesCompletedText =
-            findViewById<TextView>(R.id.quizzesCompletedText)
+        // Back Button
+        val backButton =
+            findViewById<TextView>(R.id.btnBack)
 
-        val questionsAttemptedText =
-            findViewById<TextView>(R.id.questionsAttemptedText)
+        backButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
 
-        val correctAnswersText =
-            findViewById<TextView>(R.id.correctAnswersText)
+        // Find Statistics Views
+        focusSessionsText =
+            findViewById(R.id.txtFocusSessions)
 
-        val accuracyText =
-            findViewById<TextView>(R.id.accuracyText)
+        studyTimeText =
+            findViewById(R.id.txtStudyTime)
 
-        val lastScoreText =
-            findViewById<TextView>(R.id.lastScoreText)
+        quizzesCompletedText =
+            findViewById(R.id.txtQuizzesCompleted)
 
-        val sharedPreferences =
-            getSharedPreferences("SmartStudentHub", MODE_PRIVATE)
+        questionsAttemptedText =
+            findViewById(R.id.txtQuestionsAttempted)
+
+        correctAnswersText =
+            findViewById(R.id.txtCorrectAnswers)
+
+        lastScoreText =
+            findViewById(R.id.txtLastScore)
+
+        loadProgress()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        loadProgress()
+    }
+
+    private fun loadProgress() {
+
+        val preferences =
+            getSharedPreferences(
+                "SmartStudentHub",
+                MODE_PRIVATE
+            )
+
+        val focusSessions =
+            preferences.getInt(
+                "focusSessions",
+                0
+            )
+
+        val totalStudyMinutes =
+            preferences.getInt(
+                "totalStudyMinutes",
+                0
+            )
 
         val quizzesCompleted =
-            sharedPreferences.getInt("quizzesCompleted", 0)
+            preferences.getInt(
+                "quizzesCompleted",
+                0
+            )
 
         val questionsAttempted =
-            sharedPreferences.getInt("questionsAttempted", 0)
+            preferences.getInt(
+                "questionsAttempted",
+                0
+            )
 
         val correctAnswers =
-            sharedPreferences.getInt("correctAnswers", 0)
+            preferences.getInt(
+                "correctAnswers",
+                0
+            )
 
         val lastScore =
-            sharedPreferences.getInt("lastScore", 0)
+            preferences.getInt(
+                "lastScore",
+                0
+            )
 
         val lastTotal =
-            sharedPreferences.getInt("lastTotal", 0)
-
-        val accuracy =
-            if (questionsAttempted > 0) {
-                (correctAnswers * 100) / questionsAttempted
-            } else {
+            preferences.getInt(
+                "lastTotal",
                 0
-            }
+            )
+
+        focusSessionsText.text =
+            focusSessions.toString()
+
+        studyTimeText.text =
+            "$totalStudyMinutes min"
 
         quizzesCompletedText.text =
-            "Quizzes Completed: $quizzesCompleted"
+            quizzesCompleted.toString()
 
         questionsAttemptedText.text =
-            "Questions Attempted: $questionsAttempted"
+            questionsAttempted.toString()
 
         correctAnswersText.text =
-            "Correct Answers: $correctAnswers"
-
-        accuracyText.text =
-            "Accuracy: $accuracy%"
+            correctAnswers.toString()
 
         lastScoreText.text =
-            "Last Quiz Score: $lastScore / $lastTotal"
+            if (lastTotal > 0) {
+                "$lastScore / $lastTotal"
+            } else {
+                "No quiz yet"
+            }
     }
 }

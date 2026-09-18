@@ -1,5 +1,6 @@
 package com.example.smartstudenthub
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -40,7 +41,10 @@ class GeneratedFlashcardActivity : AppCompatActivity() {
         val backButton = findViewById<TextView>(R.id.btnBack)
 
         backButton.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+            val intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+
         }
 
         progressText = findViewById(R.id.flashcardProgressText)

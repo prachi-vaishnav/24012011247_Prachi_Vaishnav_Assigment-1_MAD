@@ -14,6 +14,7 @@
         android:padding="20dp">
 
         <!-- Header -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,16 +42,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Create Note"
+                    android:text="AI Doubt Solver"
                     android:textColor="@color/text_primary"
-                    android:textSize="27sp"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="Capture ideas. Keep them organized."
+                    android:layout_marginTop="2dp"
+                    android:text="Ask. Understand. Learn."
                     android:textColor="@color/text_secondary"
                     android:textSize="13sp" />
 
@@ -58,65 +59,65 @@
 
         </LinearLayout>
 
-        <!-- Title -->
+        <!-- Doubt Input -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Note Title"
+            android:text="What are you stuck on?"
             android:textColor="@color/text_primary"
             android:textSize="17sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/noteTitleEditText"
+            android:id="@+id/doubtEditText"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/bg_card"
-            android:hint="Enter a title"
-            android:padding="16dp"
-            android:textColor="@color/text_primary"
-            android:textColorHint="@color/text_secondary"
-            android:textSize="15sp"
-            android:singleLine="true" />
-
-        <!-- Content -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:text="Note Content"
-            android:textColor="@color/text_primary"
-            android:textSize="17sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/noteContentEditText"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_card"
             android:gravity="top|start"
-            android:hint="Write your notes here..."
+            android:hint="Type your question or doubt here..."
             android:padding="16dp"
             android:textColor="@color/text_primary"
             android:textColorHint="@color/text_secondary"
-            android:textSize="15sp"
-            android:inputType="textMultiLine"
-            android:scrollbars="vertical" />
+            android:textSize="15sp" />
 
-        <!-- Save -->
+        <!-- Ask Button -->
+
         <Button
-            android:id="@+id/saveNoteButton"
+            android:id="@+id/btnAskAI"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="14dp"
             android:backgroundTint="@color/primary"
-            android:text="Save Note"
+            android:text="Ask AI"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <!-- AI Response -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="AI Explanation"
+            android:textColor="@color/text_primary"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/aiResponseText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_card"
+            android:minHeight="150dp"
+            android:padding="16dp"
+            android:text="Your AI explanation will appear here."
+            android:textColor="@color/text_secondary"
+            android:textSize="15sp" />
 
     </LinearLayout>
 

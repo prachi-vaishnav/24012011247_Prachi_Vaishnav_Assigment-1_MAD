@@ -22,18 +22,29 @@ class LoginActivity : AppCompatActivity() {
             val enteredUsername = username.text.toString().trim()
             val enteredPassword = password.text.toString()
 
-            if (enteredUsername == "student" && enteredPassword == "1234") {
+            // Only empty fields are not allowed
+            if (enteredUsername.isEmpty() || enteredPassword.isEmpty()) {
 
+                Toast.makeText(
+                    this,
+                    "Please enter your ID and password",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            } else {
+
+                // Save the entered ID
+                val sharedPreferences =
+                    getSharedPreferences("SmartStudentHub", MODE_PRIVATE)
+
+                sharedPreferences.edit()
+                    .putString("username", enteredUsername)
+                    .apply()
+
+                // Open Home
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
-
-            } else {
-                Toast.makeText(
-                    this,
-                    "Invalid username or password",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
         }
     }

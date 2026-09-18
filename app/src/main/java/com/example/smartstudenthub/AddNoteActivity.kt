@@ -1,8 +1,10 @@
 package com.example.smartstudenthub
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -11,6 +13,15 @@ class AddNoteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_note)
+
+        // Back Button
+        val backButton = findViewById<TextView>(R.id.btnBack)
+
+        backButton.setOnClickListener {
+            val intent= Intent(this, NotesActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         val titleEditText =
             findViewById<EditText>(R.id.noteTitleEditText)
@@ -79,7 +90,6 @@ class AddNoteActivity : AppCompatActivity() {
                         "$oldTitle|||$oldContent"
 
                     notes.remove(oldNote)
-
                 }
 
                 // Add updated version

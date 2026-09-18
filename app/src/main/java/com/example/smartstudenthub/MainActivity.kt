@@ -4,12 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Profile Button
+        val profileButton = findViewById<TextView>(R.id.profileButton)
+
+        profileButton.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
         // Quick Access - Notes
         val notesButton = findViewById<LinearLayout>(R.id.btnNotes)
@@ -62,6 +71,20 @@ class MainActivity : AppCompatActivity() {
         val navFocus = findViewById<LinearLayout>(R.id.navFocus)
 
         navFocus.setOnClickListener {
+            val intent = Intent(this, FocusRoomActivity::class.java)
+            startActivity(intent)
+        }
+        // Quick Access - AI Doubt Solver
+        val aiDoubtButton = findViewById<LinearLayout>(R.id.btnAIDoubt)
+
+        aiDoubtButton.setOnClickListener {
+            val intent = Intent(this, AiDoubtActivity::class.java)
+            startActivity(intent)
+        }
+        // Quick Access - Focus Room
+        val focusRoomButton = findViewById<LinearLayout>(R.id.btnFocusRoom)
+
+        focusRoomButton.setOnClickListener {
             val intent = Intent(this, FocusRoomActivity::class.java)
             startActivity(intent)
         }

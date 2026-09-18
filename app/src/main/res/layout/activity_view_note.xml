@@ -5,52 +5,85 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F7F5FA">
+    android:background="@color/background">
 
-    <!-- Top bar -->
+    <!-- Top Bar -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="64dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingStart="20dp"
+        android:paddingStart="12dp"
         android:paddingEnd="8dp">
 
+        <!-- Back Button -->
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="‹"
+            android:textColor="@color/text_primary"
+            android:textSize="36sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Note Title -->
         <TextView
             android:id="@+id/viewNoteTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginStart="8dp"
             android:text="Note Title"
-            android:textColor="#222222"
+            android:textColor="@color/text_primary"
             android:textSize="22sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end" />
 
+        <!-- More Options -->
         <ImageButton
             android:id="@+id/noteMenuButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Note options"
-            android:src="@android:drawable/ic_menu_more" />
+            android:src="@android:drawable/ic_menu_more"
+            android:tint="@color/text_primary" />
 
     </LinearLayout>
 
-    <!-- Note content -->
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/surface_variant" />
+
+    <!-- Note Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="20dp">
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/viewNoteContent"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Note content"
-            android:textColor="#444444"
-            android:textSize="17sp"
-            android:lineSpacingExtra="4dp" />
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/viewNoteContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Note content"
+                android:textColor="@color/text_primary"
+                android:textSize="17sp"
+                android:lineSpacingExtra="5dp"
+                android:textIsSelectable="true" />
+
+        </LinearLayout>
 
     </ScrollView>
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -21,7 +22,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- HEADER -->
+            <!-- ===================== HEADER ===================== -->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,12 +61,13 @@
                     android:gravity="center"
                     android:text="👤"
                     android:textSize="22sp"
-                    android:background="@drawable/bg_card" />
+                    android:background="@drawable/bg_card"
+                    android:clickable="true"
+                    android:focusable="true" />
 
             </LinearLayout>
 
-
-            <!-- SEARCH -->
+            <!-- ===================== SEARCH ===================== -->
 
             <EditText
                 android:id="@+id/searchBar"
@@ -81,13 +83,12 @@
                 android:textColorHint="@color/text_secondary"
                 android:textSize="14sp" />
 
-
-            <!-- QUICK ACCESS -->
+            <!-- ===================== QUICK ACCESS ===================== -->
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="26dp"
                 android:text="Quick Access"
                 android:textColor="@color/text_primary"
                 android:textSize="19sp"
@@ -96,7 +97,7 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="12dp"
                 android:scrollbars="none">
 
                 <LinearLayout
@@ -108,23 +109,26 @@
 
                     <LinearLayout
                         android:id="@+id/btnNotes"
-                        android:layout_width="145dp"
-                        android:layout_height="115dp"
-                        android:layout_marginEnd="12dp"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bg_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:background="@drawable/bg_card">
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="📚"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="8dp"
                             android:text="Notes"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
@@ -133,34 +137,37 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Review &amp; organize"
+                            android:layout_marginTop="3dp"
+                            android:text="Save &amp; organize"
                             android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
 
                     </LinearLayout>
 
-
                     <!-- FLASHCARDS -->
 
                     <LinearLayout
                         android:id="@+id/btnFlashcards"
-                        android:layout_width="145dp"
-                        android:layout_height="115dp"
-                        android:layout_marginEnd="12dp"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bg_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:background="@drawable/bg_card">
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="🧠"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="8dp"
                             android:text="Flashcards"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
@@ -169,34 +176,37 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
                             android:text="Quick revision"
                             android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
 
                     </LinearLayout>
 
-
                     <!-- QUIZ -->
 
                     <LinearLayout
                         android:id="@+id/btnQuiz"
-                        android:layout_width="145dp"
-                        android:layout_height="115dp"
-                        android:layout_marginEnd="12dp"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bg_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:background="@drawable/bg_card">
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="📝"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="8dp"
                             android:text="Quiz"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
@@ -205,34 +215,77 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
                             android:text="Test yourself"
                             android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
 
                     </LinearLayout>
 
-
-                    <!-- AI DOUBT -->
+                    <!-- AI DOUBT SOLVER -->
 
                     <LinearLayout
-                        android:id="@+id/btnDoubt"
-                        android:layout_width="145dp"
-                        android:layout_height="115dp"
+                        android:id="@+id/btnAIDoubt"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bg_focus_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:background="@drawable/bg_card">
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="✨"
-                            android:textSize="25sp" />
+                            android:textSize="30sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="AI Doubt"
+                            android:layout_marginTop="8dp"
+                            android:text="AI Doubt Solver"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Ask &amp; understand"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+
+                    <!-- FOCUS ROOM -->
+
+                    <LinearLayout
+                        android:id="@+id/btnFocusRoom"
+                        android:layout_width="125dp"
+                        android:layout_height="125dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/bg_focus_card"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⏱️"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Focus Room"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -240,18 +293,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ask anything"
+                            android:layout_marginTop="3dp"
+                            android:text="Deep work"
                             android:textColor="@color/text_secondary"
                             android:textSize="11sp" />
 
                     </LinearLayout>
-
                 </LinearLayout>
 
             </HorizontalScrollView>
 
-
-            <!-- YOUR PROGRESS -->
+            <!-- ===================== YOUR PROGRESS ===================== -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -289,7 +341,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="14 Days"
+                        android:text="1 Day"
                         android:textColor="@color/text_primary"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -303,7 +355,6 @@
 
                 </LinearLayout>
 
-
                 <!-- STUDY TIME -->
 
                 <LinearLayout
@@ -314,12 +365,6 @@
                     android:orientation="vertical"
                     android:gravity="center"
                     android:background="@drawable/bg_card">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="⏱️"
-                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/todayStudyTime"
@@ -334,6 +379,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="⏱️"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="Study Time"
                         android:textColor="@color/text_secondary"
                         android:textSize="11sp" />
@@ -342,8 +393,7 @@
 
             </LinearLayout>
 
-
-            <!-- WEEKLY PROGRESS -->
+            <!-- ===================== WEEKLY PROGRESS ===================== -->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -372,8 +422,7 @@
 
             </LinearLayout>
 
-
-            <!-- RECENT ACTIVITY -->
+            <!-- ===================== RECENT ACTIVITY ===================== -->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -417,7 +466,6 @@
 
     </ScrollView>
 
-
     <!-- ===================== BOTTOM NAVIGATION ===================== -->
 
     <LinearLayout
@@ -455,7 +503,6 @@
 
         </LinearLayout>
 
-
         <!-- NOTES -->
 
         <LinearLayout
@@ -480,7 +527,6 @@
                 android:textSize="11sp" />
 
         </LinearLayout>
-
 
         <!-- FLASHCARDS -->
 
@@ -507,7 +553,6 @@
 
         </LinearLayout>
 
-
         <!-- QUIZ -->
 
         <LinearLayout
@@ -532,7 +577,6 @@
                 android:textSize="11sp" />
 
         </LinearLayout>
-
 
         <!-- FOCUS ROOM -->
 

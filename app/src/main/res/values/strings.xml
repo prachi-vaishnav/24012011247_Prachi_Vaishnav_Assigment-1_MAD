@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Smart student hub</string>
+
+    <string name="back_arrow">‹</string>
+    <string name="flashcards">Flashcards</string>
+    <string name="flashcards_subtitle">Turn your notes into smart flashcards</string>
+    <string name="study_material">Study Material</string>
+    <string name="flashcards_notes_hint">Paste or type your study notes here...</string>
+    <string name="number_of_flashcards">Number of flashcards</string>
+    <string name="generate_flashcards">✦ Generate Flashcards</string>
+
 </resources>
